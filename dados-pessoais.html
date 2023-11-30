@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/dados-pessoais.css">
+</head>
+
+<body>
+    <!-- cabeçalho -->
+    <header>
+        <div class="linha"></div>
+        <img src="/SA-bombeiros/imagens/noar-logo.png" width="100px" alt="">
+        <div class="linha"></div>
+    </header>
+    <!-- FIM DO CABEÇALHO -->
+
+
+    <!---------- Home ---------->
+    <div class="home">
+        <a href="/login/pg-login.html"><img src="/SA-bombeiros/imagens/home.png" alt=""></a>
+    </div>
+
+
+    <!---------------------- TITULO ---------------------->
+    <h1 class="titulo">
+        <p>Dados Pessoais</p>
+    </h1>
+    <!---------------------- FIM DO TITULO ---------------------->
+
+
+    <!---------------------- FORMULARIO ---------------------->
+    <div class="conteudo">
+        <form method='POST' action='recebe-dados.php'>
+
+            <!---------------------- PRIMEIRA LINHA ---------------------->
+            <div class="form">
+                <!---------------------- DATA ---------------------->
+                <label for="data">Data</label>
+                <input type='date' id='data' name='data'>
+                <!---------------------- SEXO ---------------------->
+                <p>Sexo:</p>
+                <input type="radio" id="sexo-m" name="sexo" value="Masculino">
+                <label for="sexo-m">Masculino</label><br>
+                <input type="radio" id="sexo-f" name="sexo" value="Feminino">
+                <label for="sexo-f">Feminio</label>
+            </div>
+
+            <!---------------------- SEGUNDA LINHA ---------------------->
+            <div class="form">
+                <!---------------------- INPUT NOME DO HOSPITAL ---------------------->
+                <label for="nome-hospital">Nome do Hospital</label>
+                <input type='text' id='nome-hospital' name='nome-hospital' required>
+            </div>
+
+            <!---------------------- TERCEIRA LINHA ---------------------->
+            <div class="form">
+                <!---------------------- INPUT NOME ---------------------->
+                <label for="nome">Nome</label>
+                <input type='text' id='nome' name='nome' required>
+            </div>
+            <!---------------------- QUARTA LINHA ---------------------->
+            <div class="form">
+                <!---------------------- INPUT IDADE ---------------------->
+                <label for="idade">Idade</label>
+                <input type="text" name="idade" id="idade" required>
+            </div>
+            <!---------------------- QUINTA LINHA ---------------------->
+            <div class="form">
+                <!---------------------- INPUT RG ---------------------->
+                <label for="rgpaciente">RG</label>
+                <input type="text" name="rg" id="rg" required>
+                <br>
+                <!---------------------- INPUT TELEFONE ---------------------->
+                <label for="fone">Telefone</label>
+                <input type="tel" id="fone" name="fone" required pattern="[0-9]{2} [0-9]{5}-[0-9]{4}"
+                    placeholder="11 99999-9999">
+            </div>
+            <br>
+            <hr>
+            <br>
+            <!---------------------- SEXTA LINHA ---------------------->
+            <div class="form">
+                <!---------------------- INPUT ACOMPANHAMENTO ---------------------->
+                <label for="acompanhante">Acompanhante</label>
+                <input type="text" id="acompanhante" name="acompanhante" required>
+            </div>
+            <!---------------------- SETIMA LINHA LINHA ---------------------->
+            <div class="form">
+                <!---------------------- INPUT IDADE DO ACOMPANHANTE ---------------------->
+                <label for="idade_acompanhante">Idade</label>
+                <input type="text" name="idade_acompanhante" id="idade_acompanhante" required
+                    placeholder="Idade do acompanhante">
+            </div>
+            <!---------------------- OITAVA LINHA ---------------------->
+            <div class="form">
+                <!---------------------- INPUT LOCAL DA OCORRENCIA ---------------------->
+                <label for="local_ocorrencia">Local da ocorrência</label>
+                <input type="text" name="local-ocorrencia" id="local_ocorrencia">
+            </div>
+            <br>
+            <hr>
+            <br>
+            <!---------------------- NONA LINHA ---------------------->
+            <div class="form">
+                <!---------------------- INPUT N USB ---------------------->
+                <label for="usb">Nº USB</label>
+                <input type="text" name="usb" id="usb">
+                <br>
+                <!---------------------- CODIGO IR ---------------------->
+                <label for="codir">CÓD. IR.</label>
+                <input type="checkbox" id="codir" name="codir" />
+            </div>
+            <!---------------------- DECIMA LINHA ---------------------->
+            <div class="from">
+                <!---------------------- INPUT N OCORRENCIA ---------------------->
+                <label for="nocorr">Nº OCORR.</label>
+                <input type="text" name="nocorr" id="nocorr">
+                <br>
+                <!---------------------- INPUT CODIGO PS ---------------------->
+                <label for="codps">CÓD. PS.</label>
+                <input type="checkbox" id="codps" name="codps" />
+            </div>
+            <br>
+            <!---------------------- BOTÕES ---------------------->
+            <div class="form">
+                <!---------------------- INPUT RESET ---------------------->
+                <input type="reset" value="Reset">
+                <!---------------------- INPUT ENVIAR ---------------------->
+                <input type="submit" value="Enviar">
+            </div>
+
+        </form>
+    </div>
+    <div class="btn-next"><button onclick="window.location.href='/SA-bombeiros/sinais_sintomas/sinais_sintomas.html'">------------></button></div>
+
+</body>
+
+</html>
