@@ -63,3 +63,19 @@ button {
 .dois button{
     margin: auto;
 }
+
+.botoes{
+    width: 35%;
+    height: 200%;
+}
+.botoes .botao{
+    background-color: #ed7c3fd5;
+    width: 100%;
+    height: 15%;
+    border-radius: 30px;
+    margin: 5px;
+    color: white;
+    font-size: 25px;
+    font-family: sans-serif;
+    text-align :center
+}
