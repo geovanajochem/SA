@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastro.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <div class="nome">
+        <h1>Cadastro</h1>
+    </div>
+    <form action="cadastro.php" method="post">
+    <div class="all">
+        <div class="quadrado">
+            <div class="ado">
+                <input type="text" placeholder="Nome" name="nome_usuario" class="um"> <br><br>
+                <input type="text" placeholder="Função" name="funcao" class="dois"> <br><br>
+                <div class="tres">
+                    <input type="password" id="senha" placeholder="Senha" name="senha" class="quatro" size="38" maxlength="50" height="15" autocomplete="off" required>
+                    <input type="text" placeholder="Unidade" name="unidade" class="cinco" >
+                </div> <br>
+                <div class="tres">
+                    <input type="text" placeholder="Reg.ABVESC.N°" name="registro_abvesc" class="sete" >
+                    <input type="text" placeholder="Validade" name="validade" class="oito">
+                </div> <br>
+                <div class="tres">
+                    <input type="text" placeholder="CPF" name="cpf" class="dez">
+                    <input type="text" placeholder="Data de Nascimento" name="data_nasc" class="onze">
+                </div> <br>
+                <button type="submit">Cadastrar!</button>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+
+</html>
