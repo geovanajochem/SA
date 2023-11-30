@@ -25,12 +25,13 @@ header{
     margin-right: 5%;
     margin-top: 1%;
 }
-button {
+.button {
     background-color: orangered;
     color: white;
     border-radius: 30px;
     width: 55%;
     height: 15%;
+    text-align: center;
 }
 
 .dois{
@@ -42,7 +43,7 @@ button {
     align-items: center;
     text-align: center;
 }
-.dois button{
+.dois .button{
     margin: auto;
 }
 .conteudo {
@@ -51,4 +52,8 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+a{
+    color: white;
+    text-decoration: none;
 }
