@@ -47,3 +47,19 @@ img{
     height: 15%;
     
 }
+
+.btn-next button {
+    background-color: #A25A33;
+    font-size: 170%;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    text-align: right;
+  }
+  
+  .btn-next {
+    width: 100%;
+    text-align: right;
+    margin-left: -5%;
+  }
+  
