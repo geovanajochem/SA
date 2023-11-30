@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/pg-login.css">
+</head>
+
+<body>
+    <header>
+        <div class="linha"></div>
+        <img src="img/noar-logo.png" alt="">
+        <div class="linha"></div>
+    </header> 
+
+    <div class="conteudo">
+        <div class="titulo">
+            <p>Bombeiros <br> Voluntários</p>
+        </div>
+        <div class="container">
+            <form action="login.php" method="post" class="card">
+                <div class="card-header">
+                    <h1>Login</h1>
+                </div>
+                <div class="card-content">
+                    <div class="card-content-area">
+                        <label for="usuario"><strong>Usuário</strong></label>
+                        <input type="text" id="nome_usuario" name="nome_usuario" size="38" maxlength="50"
+                        height="15" autocomplete="off" required>
+                    </div>
+                    <div class="card-content-area">
+                        <label for="password"><strong>Senha</strong></label>
+                        <input type="password" id="senha" name="senha" size="38" maxlength="50"
+                        height="15" autocomplete="off" required>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" name="button" class="btn login_btn"><strong>Login</strong></button>
+                    <a href="#" class="recuperar_senha">Esqueceu a senha?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+</body>
+</html>
