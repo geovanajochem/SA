@@ -17,7 +17,7 @@ header{
     display: flex;
 }
 header .trans{
-    background-color: rgba(255, 68, 0, 0.39);
+    background-color: #ed7c3f77;
     border-radius: 30px;
     height: 50%;
     position: relative;
