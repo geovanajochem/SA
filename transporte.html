@@ -1,47 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transporte</title>
+    <title>Document</title>
     <link rel="stylesheet" href="transporte.css">
 </head>
+
 <body>
     <header>
-        <div class="trans">
-            <h1>Transporte</h1>
-        </div>
+        <div class="linha"></div>
+        <img src="/imagens/noar-logo.png" width="100px" alt="">
+        <div class="linha"></div>
     </header>
-<div class="tp">
-    <br>
-    <input type="checkbox">Aéreo<br>
-    <input type="checkbox">Clínico<br>
-    <input type="checkbox">Emergencial<br>
-    <input type="checkbox">Pós-trauma<br>
-    <input type="checkbox">Samu<br>
-    <input type="checkbox"><input type="text"><br>
-    <input type="checkbox">Sem remoção<br>
-    <br>
-</div>
-<div class="Forma">
-    <p>Forma de Condução</p>
+    <!-- FIM DO CABEÇALHO -->
 
-    <input type="checkbox">Deitada <br>
-    <input type="checkbox">Sentada <br>
-    <input type="checkbox">Semi-sentada <br>
-    <br>
-</div>
-<br>
-<div class="decisao">
-    <p>Decisão de transporte</p>
-    
-    <input type="checkbox">potencialmente instável <br>
-    <input type="checkbox">estável <br>
-    <input type="checkbox">instável <br>
-    <input type="checkbox">crítico <br>
-</div>
-<div class="BUT">
-    <a href="vitima_era.html"><button class="botao">Póximo</button></a><br>
-</div>
+
+    <!---------- Home ---------->
+    <div class="home">
+        <a href="/menu.html"><img src="/imagens/home.png" alt=""></a>
+    </div>
+
+
+
+    <!---------------------- TITULO ---------------------->
+    <h1 class="titulo">
+        <p>Transporte</p>
+    </h1>
+    <!---------------------- FIM DO TITULO ---------------------->
+
+    <div class="conteudo">
+        <div class="tp">
+            <br>
+            <input type="checkbox">Aéreo<br>
+            <input type="checkbox">Clínico<br>
+            <input type="checkbox">Emergencial<br>
+            <input type="checkbox">Pós-trauma<br>
+            <input type="checkbox">Samu<br>
+            <input type="checkbox"><input type="text"><br>
+            <input type="checkbox">Sem remoção<br>
+            <br>
+        </div>
+        <div class="Forma">
+            <p>Forma de Condução</p>
+
+            <input type="checkbox">Deitada <br>
+            <input type="checkbox">Sentada <br>
+            <input type="checkbox">Semi-sentada <br>
+            <br>
+        </div>
+        <br>
+        <div class="decisao">
+            <p>Decisão de transporte</p>
+
+            <input type="checkbox"><img src="neutro.png" alt="">potencialmente instável <br>
+            <input type="checkbox"><img src="sorriso.png" alt="">estável <br>
+            <input type="checkbox"><img src="triste.png" alt="">instável <br>
+            <input type="checkbox"><img src="triste (1).png" alt="">crítico <br>
+        </div>
+
+        <div class="btn-next"><button onclick="window.location.href='/vitima_era.html'">>>></button>
+        </div>
+    </div>
+
+
+
 </body>
+
 </html>
