@@ -3,43 +3,63 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tipos de ocorrência</title>
     <link rel="stylesheet" href="tipo_ocorrencia.css">
 </head>
 
 <body>
+    <!-- cabeçalho -->
     <header>
-        <div class="head">
-            <h1>Tipos de ocorrência</h1>
-            <h2 class="pre">(pré-hospitalar)</h2>
-        </div>
-    </header><br><br>
-    <div class="quadrado">
-        <input type="checkbox" class="box">Causado por animais <br>
-        <input type="checkbox" class="box">Com meio de transporte <br>
-        <input type="checkbox" class="box">Desmoronamento/deslizamento <br>
-        <input type="checkbox" class="box">Emergência médica<br>
-        <input type="checkbox" class="box">Queda de altura 2m<br>
-        <input type="checkbox" class="box">Tentativa de suicídio<br>
-        <input type="checkbox" class="box">Queda própria altura<br>
-        <input type="checkbox" class="box">Afogamento<br>
-        <input type="checkbox" class="box">Agressão<br>
-        <input type="checkbox" class="box">Atropelamento<br>
-        <input type="checkbox" class="box">Choque elétrico<br>
-        <input type="checkbox" class="box">Desabamento<br>
-        <input type="checkbox" class="box">Doméstico<br>
-        <input type="checkbox" class="box">Esportivo<br>
-        <input type="checkbox" class="box">Intoxicação<br>
-        <input type="checkbox" class="box">Queda de bicicleta<br>
-        <input type="checkbox" class="box">Queda de moto<br>
-        <input type="checkbox" class="box">Queda nível<2m<br>
-        <input type="checkbox" class="box">Trabalho<br>
-        <input type="checkbox" class="box">Transferência <br>
-        <input type="checkbox" class="box"><input type="text" class="box">
+        <div class="linha"></div>
+        <img src="/imagens/noar-logo.png" width="100px" alt="">
+        <div class="linha"></div>
+    </header>
+    <!-- FIM DO CABEÇALHO -->
+
+
+    <!---------- Home ---------->
+    <div class="home">
+        <a href="menu.html"><img src="home.png" alt=""></a>
     </div>
-    <div class="btn-next"><button
-        onclick="window.location.href='transporte.html'">>>></button>
-</div>
+
+
+
+    <!---------------------- TITULO ---------------------->
+    <h1 class="titulo">
+        <p>Tipos de Ocorrência <br>
+            (pré hoapitalar)</p>
+    </h1>
+    <!---------------------- FIM DO TITULO ---------------------->
+
+    <div class="conteudo">
+        <form method='POST' action="">
+            <input type="checkbox">Causado por animais <br>
+            <input type="checkbox">Com meio de transporte <br>
+            <input type="checkbox">Desmoronamento/deslizamento <br>
+            <input type="checkbox">Emergência médica<br>
+            <input type="checkbox">Queda de altura 2m<br>
+            <input type="checkbox">Tentativa de suicídio<br>
+            <input type="checkbox">Queda própria altura<br>
+            <input type="checkbox">Afogamento<br>
+            <input type="checkbox">Agressão<br>
+            <input type="checkbox">Atropelamento<br>
+            <input type="checkbox">Choque elétrico<br>
+            <input type="checkbox">Desabamento<br>
+            <input type="checkbox">Doméstico<br>
+            <input type="checkbox">Esportivo<br>
+            <input type="checkbox">Intoxicação<br>
+            <input type="checkbox">Queda de bicicleta<br>
+            <input type="checkbox">Queda de moto<br>
+            <input type="checkbox">Queda nível<2m<br>
+                <input type="checkbox">Trabalho<br>
+                <input type="checkbox">Transferência <br>
+                <input type="checkbox">
+                <input type="text" class="box">
+        </form>
+    </div>
+    <div class="btn-next"><button onclick="window.location.href='sinais_sintomas.html'">>>></button>
+    </div>
 </body>
 
 </html>
