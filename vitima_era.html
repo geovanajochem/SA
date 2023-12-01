@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vítima Era</title>
+    <link rel="stylesheet" href="vitima_era.css">
+</head>
+
+<body>
+    <!-- cabeçalho -->
+    <header>
+        <div class="linha"></div>
+        <img src="noar-logo.png" width="100px" alt="">
+        <div class="linha"></div>
+    </header>
+    <!-- FIM DO CABEÇALHO -->
+
+
+    <div class="btn-home"><img src="home.png" alt=""></div>
+
+    <h1 class="titulo">
+        <p>Vítima Era</p>
+    </h1>
+
+    <div class="conteudo">
+        <form class="form" method='POST' action='recebe-dados.php'>
+
+            <div class="form">
+                <label for="Ciclista	">Ciclista</label>
+                <input type="checkbox" id="Ciclista	" name="Ciclista	" />
+            </div>
+            <div class="form">
+                <label for="Condutor_moto">Condutor Moto</label>
+                <input type="checkbox" id="Condutor_moto" name="Condutor_moto" />
+            </div>
+            <div class="form">
+                <label for="Gestante">Gestante</label>
+                <input type="checkbox" id="Gestante" name="Gestante">
+            </div>
+            <div class="form">
+                <label for="Passageiro_banco_frente">Passageiro Banco Frente</label>
+                <input type="checkbox" id="Passageiro_banco_frente" name="Passageiro_banco_frente">
+            </div>
+            <div class="form">
+                <label for="Passageiro_banco_trás">Passageiro Banco Trás</label>
+                <input type="checkbox" id="Passageiro_banco_trás" name="Passageiro_banco_trás">
+            </div>
+
+            <div class="form">
+                <label for="Condutor_carro">Condutor Carro</label>
+                <input type="checkbox" id="Condutor_carro" name="Condutor_carro">
+            </div>
+
+            <div class="form">
+                <label for="Clinico">Clínico</label>
+                <input type="checkbox" id="Clinico" name="Clinico">
+            </div>
+
+            <div class="form">
+                <label for="Trauma">Trauma</label>
+                <input type="checkbox" id="Trauma" name="Trauma">
+            </div>
+
+            <div class="form">
+                <label for="Passageiro_moto">Passageiro Moto</label>
+                <input type="checkbox" id="Passageiro_moto" name="Passageiro_moto">
+            </div>
+
+            <div class="form">
+                <label for="Pedestre">Pedestre</label>
+                <input type="checkbox" id="Pedestre" name="Pedestre">
+            </div>
+
+            
+        </form>
+    </div>
+    <div class="btn-next"><button
+        onclick="window.location.href='avaliação_paciente.html'">>>></button>
+    </div>
+</body>
+
