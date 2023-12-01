@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ferimentos.css">
+</head>
+
+<body>
+    <header>
+        <h1>Ferimentos</h1>
+    </header>
+    <table>
+        <tr>
+            <td>
+                <label for="Local">Local:</label>
+                <input type="text" id="Local" name="Local">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Lado">Lado:</label>
+                <input type="text" id="Lado" name="Lado">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Face">Face:</label>
+                <input type="text" id="Face" name="Face">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Tipo">Tipo:</label>
+                <input type="text" id="Tipo" name="Tipo">
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
