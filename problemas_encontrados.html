@@ -2,131 +2,204 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="problemas encontrados.css">
+  <title>Document</title>
 </head>
 <style>
-    html,body{
+  html {
+    width: 100%;
+    height: 100%;
+  }
+
+  body {
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
-}
-body{
     background-color: black;
-    overflow-x: hidden;
-    padding: 5%;
-}
-header{
+    color: white;
+  }
+
+  img {
+    width: 85px;
+  }
+
+  .linha {
+    width: 50%;
+    background-color: white;
+    height: 1%;
+  }
+
+  header {
     width: 100%;
     height: 15%;
-    color: white;
-    margin-left: 5%;
-}
-header .sus{
-    width: 70%;
-    height: 30%;
+    display: flex;
+    align-items: center;
+  }
+
+  /* ------------------------------------------------------ */
+
+  .home {
+    margin-left: 1%;
+    width: 35px;
+    height: 35px;
+  }
+
+  .home img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .titulo {
+    font-size: 180%;
+    width: 90%;
+    height: 4%;
     background-color: #ed7c3f77;
-    border-radius: 30px;
-    padding-left: 2%;
-}
-.problemas{
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  .titulo p {
+    margin: 30px 0px 40px 10px;
+  }
+
+  .problemas {
     border: 2px solid white;
     border-radius: 30px;
     color: white;
     font-size: xx-large;
-    height: 80%;
     width: 90%;
     margin-left: 5%;
-}
-.problemas .um{
-    height: 10%; 
+  }
+
+  .problemas .um {
+    height: 10%;
     padding-left: 5%;
     padding-top: 3%;
-}
-.problemas .dois{
+  }
+
+  .problemas .dois {
     border-top: 2px solid white;
     height: 20%;
     width: 95%;
     padding-left: 5%;
     padding-top: 3%;
-}
-.problemas .tres{
-    border-top:2px solid white;
+  }
+
+  .problemas .tres {
+    border-top: 2px solid white;
     height: 20%;
     width: 95%;
     padding-top: 3%;
     padding-left: 5%;
-}
-.problemas .quatro{
-    border-top:2px solid white;
-    border-bottom:2px solid white ;
-    height: 15%; 
+  }
+
+  .problemas .quatro {
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    height: 15%;
     width: 95%;
     padding-left: 5%;
     padding-top: 3%;
     padding-bottom: 3%;
-}
-.problemas .cinco{
-    height: 5%; 
+  }
+
+  .problemas .cinco {
+    height: 5%;
     width: 100%;
     padding-left: 5%;
     padding-top: 3%;
-}
-.outros{
+  }
+
+  .outros {
     color: white;
     background-color: black;
     font-size: x-large;
-}
-.Proximo{
+  }
+
+  .Proximo {
     background-color: orangered;
     color: white;
     width: 30%;
     height: 30%;
     border-radius: 30px;
-    
-}
-.BUT{
+
+  }
+
+  .BUT {
     margin: 10%;
     width: 100%;
     height: 15%;
-    
-}
+
+  }
+
+  .btn-next button {
+    background-color: #A25A33;
+    font-size: 170%;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    text-align: right;
+  }
+
+  .btn-next {
+    width: 100%;
+    text-align: right;
+    margin-left: -5%;
+    margin-top: 3%;
+  }
 </style>
+
 <body>
-    <header>
-        <h2>Problemas </h2>
-        <div class="sus">
-            <h2>encontrados</h2>
-        </div>
-    </header>
-    <div class="problemas">
-        <div class="um">
-            <input type="checkbox">psiquiáticos
-        </div>
-        <div class="dois">
-            <input type="checkbox">repiratório <br>
-            <input type="checkbox">DPOC <br>
-            <input type="checkbox">inalação de fumaça
-        </div>
-        <div class="tres">
-            <input type="checkbox">Diabetes <br>
-            <input type="checkbox">hiperglicemia <br>
-            <input type="checkbox">Hipoglicemia
-        </div>
-        <div class="quatro">
-            <input type="checkbox">Obstétrico <br>
-            <input type="checkbox">Gestante <br>
-            <input type="checkbox">Hemorragia Excessiva
-        </div>
-        <div class="cinco">
-            <input type="checkbox"><input type="text" placeholder="Outros" class="outros">
-        </div>
+  <!-- cabeçalho -->
+  <header>
+    <div class="linha"></div>
+    <img src="/imagens/noar-logo.png" width="100px" alt="">
+    <div class="linha"></div>
+  </header>
+  <!-- FIM DO CABEÇALHO -->
+
+
+  <!---------- Home ---------->
+  <div class="home">
+    <a href="/menu.html"><img src="/imagens/home.png" alt=""></a>
+  </div>
+
+  <!---------------------- TITULO ---------------------->
+  <h1 class="titulo">
+    <p>Problemas Encontrados</p>
+  </h1>
+  <!---------------------- FIM DO TITULO ---------------------->
+
+  <div class="problemas">
+
+    <div class="um">
+      <input type="checkbox">psiquiáticos
     </div>
-    <div class="BUT">
-        <a href="sinais_sintomas.html"><button class="botao">Póximo</button></a><br>
+    <div class="dois">
+      <input type="checkbox">repiratório <br>
+      <input type="checkbox">DPOC <br>
+      <input type="checkbox">inalação de fumaça
     </div>
+    <div class="tres">
+      <input type="checkbox">Diabetes <br>
+      <input type="checkbox">hiperglicemia <br>
+      <input type="checkbox">Hipoglicemia
+    </div>
+    <div class="quatro">
+      <input type="checkbox">Obstétrico <br>
+      <input type="checkbox">Gestante <br>
+      <input type="checkbox">Hemorragia Excessiva
+    </div>
+    <div class="cinco">
+      <label for="outros">Outros</label>
+      <input type="text" id="outros" name="outros" placeholder="Outros" class="outros" style="width: 50%;">
+    </div>
+  </div>
+  <div class="btn-next"><button onclick="window.location.href='transporte/transporte.html'">>>></button>
+  </div>
 </body>
 
 </html>
