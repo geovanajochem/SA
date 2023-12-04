@@ -15,8 +15,8 @@
                 $_SESSION["senha"]=$login["senha"];
                 header("Location: menu.html"); /*local para onde deseja redirecionar o usuário*/
             } else {
-                header("Location: https://www.google.com"); /*local para onde deseja redirecionar o usuário*/
-                /*echo "<script>document.querySelector('#form-text').innerText = 'E-mail ou senha inválidos'</script>";*/
+                echo "credenciais inválidas. Verifique seu usuário e senha";; /*local para onde deseja redirecionar o usuário*/
+                /*echo "<script>document.querySelector('#form-text').innerText = 'Usuário ou senha inválidos'</script>";*/
             }
         }
         
