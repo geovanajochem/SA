@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="problemas encontrados.css">
-  <title>Document</title>
+  <title>Problemas Encontrados</title>
 </head>
 <style>
   html {
@@ -172,34 +172,36 @@
     <p>Problemas Encontrados</p>
   </h1>
   <!---------------------- FIM DO TITULO ---------------------->
-
+  <form action="">
   <div class="problemas">
 
     <div class="um">
-      <input type="checkbox">psiquiáticos
+      <input type="checkbox" name="psiquiatrico">psiquiátricos
     </div>
     <div class="dois">
-      <input type="checkbox">repiratório <br>
-      <input type="checkbox">DPOC <br>
-      <input type="checkbox">inalação de fumaça
+      <p>Repiratório:</p> 
+      <input type="checkbox" name="DPOC">DPOC <br>
+      <input type="checkbox" name="inalacao_fumaca">inalação de fumaça
     </div>
     <div class="tres">
-      <input type="checkbox">Diabetes <br>
-      <input type="checkbox">hiperglicemia <br>
-      <input type="checkbox">Hipoglicemia
+      <p>Diabetes</p>
+      <input type="checkbox" name="hiperglicemia">Hiperglicemia <br>
+      <input type="checkbox" name="hipoglicemia">Hipoglicemia
     </div>
     <div class="quatro">
-      <input type="checkbox">Obstétrico <br>
-      <input type="checkbox">Gestante <br>
-      <input type="checkbox">Hemorragia Excessiva
+      <p>Obstétrico</p>
+      <input type="checkbox" name="parto_emergencia">Parto de emergencia <br>
+      <input type="checkbox" name="gestante">Gestante <br>
+      <input type="checkbox" name="hemorragia_excessiva">Hemorragia Excessiva
     </div>
     <div class="cinco">
       <label for="outros">Outros</label>
-      <input type="text" id="outros" name="outros" placeholder="Outros" class="outros" style="width: 50%;">
+      <input type="text" id="outro" name="outro" placeholder="Outros" class="outros" style="width: 50%;">
     </div>
   </div>
-  <div class="btn-next"><button onclick="window.location.href='transporte/transporte.html'">>>></button>
-  </div>
+  <div class="btn-next"><button type="submit">>>></button></div>
+</form>
+  
 </body>
 
 </html>
