@@ -33,32 +33,34 @@
     <!---------------------- FIM DO TITULO ---------------------->
 
     <div class="conteudo">
-        <form method='POST' action="">
-            <input type="checkbox">Causado por animais <br>
-            <input type="checkbox">Com meio de transporte <br>
-            <input type="checkbox">Desmoronamento/deslizamento <br>
-            <input type="checkbox">Emergência médica<br>
-            <input type="checkbox">Queda de altura 2m<br>
-            <input type="checkbox">Tentativa de suicídio<br>
-            <input type="checkbox">Queda própria altura<br>
-            <input type="checkbox">Afogamento<br>
-            <input type="checkbox">Agressão<br>
-            <input type="checkbox">Atropelamento<br>
-            <input type="checkbox">Choque elétrico<br>
-            <input type="checkbox">Desabamento<br>
-            <input type="checkbox">Doméstico<br>
-            <input type="checkbox">Esportivo<br>
-            <input type="checkbox">Intoxicação<br>
-            <input type="checkbox">Queda de bicicleta<br>
-            <input type="checkbox">Queda de moto<br>
-            <input type="checkbox">Queda nível<2m<br>
-                <input type="checkbox">Trabalho<br>
-                <input type="checkbox">Transferência <br>
-                <input type="checkbox">
-                <input type="text" class="box">
+        <form action="tipo_ocorrencia.php" method="POST">
+            <input type="checkbox" name="causado_por_animais">Causado por animais <br>
+            <input type="checkbox" name="com_meio_transporte">Com meio de transporte <br>
+            <input type="checkbox" name="desmoronamento_deslizamento">Desmoronamento/deslizamento <br>
+            <input type="checkbox" name="emergencia_medica">Emergência médica<br>
+            <input type="checkbox" name="queda_altura_2m">Queda de altura 2m<br>
+            <input type="checkbox" name="tentativa_suicidio">Tentativa de suicídio<br>
+            <input type="checkbox" name="queda_propria_altura">Queda própria altura<br>
+            <input type="checkbox" name="afogamento">Afogamento<br>
+            <input type="checkbox" name="agressao">Agressão<br>
+            <input type="checkbox" name="atropelamento">Atropelamento<br>
+            <input type="checkbox" name="choque_eletrico">Choque elétrico<br>
+            <input type="checkbox" name="desabamento">Desabamento<br>
+            <input type="checkbox" name="domestico">Doméstico<br>
+            <input type="checkbox" name="esportivo">Esportivo<br>
+            <input type="checkbox" name="intoxicao">Intoxicação<br>
+            <input type="checkbox" name="queda_bicicleta">Queda de bicicleta<br>
+            <input type="checkbox" name="queda_moto">Queda de moto<br>
+            <input type="checkbox" name="queda_maior_2m">Queda nível<2m<br>
+            <input type="checkbox" name="trabalho">Trabalho<br>
+            <input type="checkbox" name="transaferencia">Transferência <br>
+            <input type="checkbox" name="outro">
+            <input type="text" class="box" name="outro_text">
+            
+            <div class="btn-next"><button type="submit">>>></button></div>
         </form>
+        
     </div>
-    <div class="btn-next"><button onclick="window.location.href='transporte.html'">>>></button>
     </div>
 </body>
 
