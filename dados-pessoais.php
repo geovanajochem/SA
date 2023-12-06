@@ -43,7 +43,7 @@ if ($sql->execute()) {
     if ($conn->query($sqlOcorrencia) === TRUE) {
         
         
-        header("Location: tipo_ocorrencia.html");
+        header("Location: problemas_encontrados.html");
     }
 
 } else {
