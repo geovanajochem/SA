@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06/12/2023 às 23:13
+-- Tempo de geração: 06/12/2023 às 23:49
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.0.28
 
@@ -48,7 +48,8 @@ CREATE TABLE `dados_pessoais` (
 INSERT INTO `dados_pessoais` (`id_paciente`, `data_ocorrido`, `sexo`, `nome_hospital`, `nome_vitima`, `idade_vitima`, `cpf_vitima`, `telefone_vitima`, `nome_acompanhante`, `idade_acompanhante`, `local_ocorrencia`) VALUES
 (4, '2023-12-06', 'Masculino', 'A', 'B', '24', '12345678999', '47 99999-9999', 'C', '12', 'D'),
 (5, '2023-12-13', 'Feminino', 'Dona Helena', 'Djeniffer', '31', '11111111111', '47 99999-9999', 'C', '12', 'D'),
-(6, '2023-12-13', 'Feminino', 'Dona Helena2', 'Djeniffer2', '30', '11111111111', '47 99999-9999', 'C', '12', 'D');
+(6, '2023-12-13', 'Feminino', 'Dona Helena2', 'Djeniffer2', '30', '11111111111', '47 99999-9999', 'C', '12', 'D'),
+(7, '2023-12-07', 'Masculino', 'dq', 'wdq', '12', '11111111111', '11 99999-9999', 'fcfd', '52', 'sa');
 
 -- --------------------------------------------------------
 
@@ -101,7 +102,8 @@ CREATE TABLE `informacao_ocorrencia` (
 INSERT INTO `informacao_ocorrencia` (`id_paciente`, `N_usb`, `n_ocorrencia`, `desp`, `h_ch`, `km_final`, `cod_ir`, `cod_ps`) VALUES
 (4, 1, '2', NULL, NULL, NULL, 1, 1),
 (5, 1, '2', NULL, NULL, NULL, 1, 1),
-(6, 1, '2', NULL, NULL, NULL, 1, 1);
+(6, 1, '2', NULL, NULL, NULL, 1, 1),
+(7, 0, 'as', NULL, NULL, NULL, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -121,6 +123,13 @@ CREATE TABLE `problemas_encontrados` (
   `hemorragia_excessiva` tinyint(1) NOT NULL,
   `outro` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `problemas_encontrados`
+--
+
+INSERT INTO `problemas_encontrados` (`id_paciente`, `psiquiatrico`, `DPOC`, `inalacao_fumaca`, `hiperglicemia`, `hipoglicemia`, `parto_emergencia`, `gestante`, `hemorragia_excessiva`, `outro`) VALUES
+(7, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -194,7 +203,7 @@ CREATE TABLE `procedimentos_efetuados` (
 
 CREATE TABLE `sinais_sintomas` (
   `id_paciente` int(11) NOT NULL,
-  `abdomem_sensível_rígido` tinyint(1) NOT NULL,
+  `abdomem_sensivel_rigido` tinyint(1) NOT NULL,
   `afundamento_cranio` tinyint(1) NOT NULL,
   `agitacao` tinyint(1) NOT NULL,
   `amnesia` tinyint(1) NOT NULL,
@@ -430,7 +439,7 @@ ALTER TABLE `vitima_era`
 -- AUTO_INCREMENT de tabela `dados_pessoais`
 --
 ALTER TABLE `dados_pessoais`
-  MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
