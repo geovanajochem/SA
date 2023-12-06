@@ -25,11 +25,11 @@
     </h1>
 
     <div class="conteudo">
-        <form class="form" method='POST' action='recebe-dados.php'>
+        <form action='sinais_sintomas.php' method='POST' >
 
             <div class="form">
                 <label for="abdomem_sensível_rígido	">Abdomem sensível ou Rígido</label>
-                <input type="checkbox" id="abdomem_sensível_rígido	" name="abdomem_sensível_rígido	" />
+                <input type="checkbox" id="abdomem_sensível_rígido	" name="abdomem_sensivel_rigido	" />
             </div>
             <div class="form">
                 <label for="afundamento_cranio">Afundamento de crânio</label>
@@ -122,13 +122,13 @@
             </div>
 
             <div class="form">
-                <label for="edema_generalizado">Edema Generalizado</label>
-                <input type="checkbox" id="edema_generalizado" name="edema_generalizado">
+                <label for="edema_localizado">Edema Localizado</label>
+                <input type="checkbox" id="edema_localizado" name="edema_localizado">
             </div>
 
             <div class="form">
-                <label for="edema_localizado">Edema Localizada</label>
-                <input type="checkbox" id="edema_localizado" name="edema_localizado">
+                <label for="edema_generalizado">Edema Generalizado</label>
+                <input type="checkbox" id="edema_generalizado" name="edema_generalizado">
             </div>
 
             <div class="form">
@@ -188,7 +188,7 @@
 
             <div class="form">
                 <label for="o.v.a.c.e">O.V.A.C.E</label>
-                <input type="checkbox" id="o.v.a.c.e" name="o.v.a.c.e">
+                <input type="checkbox" id="o_v_a_c_e" name="o_v_a_c_e">
             </div>
 
             <div class="form">
@@ -281,9 +281,9 @@
                 <label for="outro">:Outro</label>
 
             </div>
+            <div class="btn-next"><button type="submit">>>></button>
+        </div>
         </form>
     </div>
-    <div class="btn-next"><button
-            onclick="window.location.href='tipo_ocorrencia.html'">>>></button>
-    </div>
+    
 </body>
