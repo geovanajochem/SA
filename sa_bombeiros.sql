@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06/12/2023 às 23:49
+-- Tempo de geração: 07/12/2023 às 00:14
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.0.28
 
@@ -236,7 +236,7 @@ CREATE TABLE `sinais_sintomas` (
   `obito` tinyint(1) NOT NULL,
   `otorreia` tinyint(1) NOT NULL,
   `otorragia` tinyint(1) NOT NULL,
-  `o.v.a.c.e` tinyint(1) NOT NULL,
+  `o_v_a_c_e` tinyint(1) NOT NULL,
   `parada_cardiaca` tinyint(1) NOT NULL,
   `parada_respiratoria` tinyint(1) NOT NULL,
   `priapismo` tinyint(1) NOT NULL,
