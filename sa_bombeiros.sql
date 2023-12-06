@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06-Dez-2023 às 15:49
--- Versão do servidor: 8.0.21
--- versão do PHP: 8.1.2
+-- Tempo de geração: 06/12/2023 às 23:13
+-- Versão do servidor: 10.4.28-MariaDB
+-- Versão do PHP: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,87 +24,25 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `anamnese_emergencia_medica`
---
-
-CREATE TABLE `anamnese_emergencia_medica` (
-  `o_que_aconteceu` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
-  `aconteceu_outras_vezes` tinyint(1) NOT NULL,
-  `a_quanto_tempo_isto_aconteceu` varchar(10) COLLATE utf8mb4_general_ci NOT NULL,
-  `possui_algum_problema_saude` tinyint(1) NOT NULL,
-  `quais` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `faz_uso_medicacao` tinyint(1) NOT NULL,
-  `hr_ultima_medicacao` time NOT NULL,
-  `quais_medicacoes` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
-  `alegico_a_algo` tinyint(1) NOT NULL,
-  `se_sim_especifique` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `ingeriu_alimento_ou_liquido>=6hrs` tinyint(1) NOT NULL,
-  `que_hrs` time NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `anamnese_gestacional`
---
-
-CREATE TABLE `anamnese_gestacional` (
-  `periodo_gestacao` varchar(10) COLLATE utf8mb4_general_ci NOT NULL,
-  `fez_pre-natal` tinyint(1) NOT NULL,
-  `nome_medico` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `existe_possibilidade_complicacao` tinyint(1) NOT NULL,
-  `e_o_primeiro_filho` tinyint(1) NOT NULL,
-  `quantos` varchar(2) COLLATE utf8mb4_general_ci NOT NULL,
-  `que_hrs_iniciaram_contracoes` time NOT NULL,
-  `tempo_das_contracoes_duracao` varchar(2) COLLATE utf8mb4_general_ci NOT NULL,
-  `tempo_das_contracoes_intervalo` varchar(2) COLLATE utf8mb4_general_ci NOT NULL,
-  `sente_pressao_regiao_quadril_ou_vontade_de_evacuar` tinyint(1) NOT NULL,
-  `ja_houve_ruptura_bolsa` tinyint(1) NOT NULL,
-  `foi_feito_inspecao_visual` tinyint(1) NOT NULL,
-  `parto_realizado` tinyint(1) NOT NULL,
-  `hr_nascimento` time NOT NULL,
-  `sexo_bb` tinyint(1) NOT NULL,
-  `nome_bb` varchar(50) COLLATE utf8mb4_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `avaliacao_cinematica`
---
-
-CREATE TABLE `avaliacao_cinematica` (
-  `disturbio_comportamento` tinyint(1) NOT NULL,
-  `encontrado_de_capacete` tinyint(1) NOT NULL,
-  `encontrado_de_cinto` tinyint(1) NOT NULL,
-  `para-brisas_avariado` tinyint(1) NOT NULL,
-  `caminhando_na_cena` tinyint(1) NOT NULL,
-  `painel_avariado` tinyint(1) NOT NULL,
-  `volante_torcido` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `dados_pessoais`
+-- Estrutura para tabela `dados_pessoais`
 --
 
 CREATE TABLE `dados_pessoais` (
-  `id_paciente` int NOT NULL,
+  `id_paciente` int(11) NOT NULL,
   `data_ocorrido` date NOT NULL,
-  `sexo` varchar(15) COLLATE utf8mb4_general_ci NOT NULL,
-  `nome_hospital` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `nome_vitima` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `idade_vitima` varchar(3) COLLATE utf8mb4_general_ci NOT NULL,
-  `cpf_vitima` varchar(11) COLLATE utf8mb4_general_ci NOT NULL,
-  `telefone_vitima` varchar(13) COLLATE utf8mb4_general_ci NOT NULL,
-  `nome_acompanhante` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `idade_acompanhante` varchar(3) COLLATE utf8mb4_general_ci NOT NULL,
-  `local_ocorrencia` varchar(50) COLLATE utf8mb4_general_ci NOT NULL
+  `sexo` varchar(15) NOT NULL,
+  `nome_hospital` varchar(50) NOT NULL,
+  `nome_vitima` varchar(50) NOT NULL,
+  `idade_vitima` varchar(3) NOT NULL,
+  `cpf_vitima` varchar(11) NOT NULL,
+  `telefone_vitima` varchar(13) NOT NULL,
+  `nome_acompanhante` varchar(50) NOT NULL,
+  `idade_acompanhante` varchar(3) NOT NULL,
+  `local_ocorrencia` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `dados_pessoais`
+-- Despejando dados para a tabela `dados_pessoais`
 --
 
 INSERT INTO `dados_pessoais` (`id_paciente`, `data_ocorrido`, `sexo`, `nome_hospital`, `nome_vitima`, `idade_vitima`, `cpf_vitima`, `telefone_vitima`, `nome_acompanhante`, `idade_acompanhante`, `local_ocorrencia`) VALUES
@@ -115,10 +53,11 @@ INSERT INTO `dados_pessoais` (`id_paciente`, `data_ocorrido`, `sexo`, `nome_hosp
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `decisao_transporte`
+-- Estrutura para tabela `decisao_transporte`
 --
 
 CREATE TABLE `decisao_transporte` (
+  `id_paciente` int(11) NOT NULL,
   `critico` tinyint(1) NOT NULL,
   `instavel` tinyint(1) NOT NULL,
   `potencialmente_instavel` tinyint(1) NOT NULL,
@@ -128,21 +67,11 @@ CREATE TABLE `decisao_transporte` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `divulgar_p_imprenca`
---
-
-CREATE TABLE `divulgar_p_imprenca` (
-  `sim` tinyint(1) NOT NULL,
-  `nao` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `forma_conducao`
+-- Estrutura para tabela `forma_conducao`
 --
 
 CREATE TABLE `forma_conducao` (
+  `id_paciente` int(11) NOT NULL,
   `deitada` tinyint(1) NOT NULL,
   `sentada` tinyint(1) NOT NULL,
   `semi_sentada` tinyint(1) NOT NULL
@@ -151,22 +80,22 @@ CREATE TABLE `forma_conducao` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `informacao_ocorrencia`
+-- Estrutura para tabela `informacao_ocorrencia`
 --
 
 CREATE TABLE `informacao_ocorrencia` (
-  `id_paciente` int NOT NULL,
-  `N_usb` int DEFAULT NULL,
-  `n_ocorrencia` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `desp` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `h_ch` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `km_final` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `cod_ir` int DEFAULT NULL,
-  `cod_ps` int DEFAULT NULL
+  `id_paciente` int(11) NOT NULL,
+  `N_usb` int(11) DEFAULT NULL,
+  `n_ocorrencia` varchar(10) DEFAULT NULL,
+  `desp` varchar(10) DEFAULT NULL,
+  `h_ch` varchar(10) DEFAULT NULL,
+  `km_final` varchar(10) DEFAULT NULL,
+  `cod_ir` int(11) DEFAULT NULL,
+  `cod_ps` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `informacao_ocorrencia`
+-- Despejando dados para a tabela `informacao_ocorrencia`
 --
 
 INSERT INTO `informacao_ocorrencia` (`id_paciente`, `N_usb`, `n_ocorrencia`, `desp`, `h_ch`, `km_final`, `cod_ir`, `cod_ps`) VALUES
@@ -177,83 +106,30 @@ INSERT INTO `informacao_ocorrencia` (`id_paciente`, `N_usb`, `n_ocorrencia`, `de
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `localizacao_traumas`
---
-
-CREATE TABLE `localizacao_traumas` (
-  `local` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
-  `lado` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
-  `face` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
-  `tipo` varchar(20) COLLATE utf8mb4_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `materiais_utilizados_deixado_hospital`
---
-
-CREATE TABLE `materiais_utilizados_deixado_hospital` (
-  `base_estabiliza` varchar(2) COLLATE utf8mb4_general_ci NOT NULL,
-  `colar_n_pp_p` text COLLATE utf8mb4_general_ci NOT NULL,
-  `colar_m_g` varchar(2) COLLATE utf8mb4_general_ci NOT NULL,
-  `coxins_estabiliza` varchar(2) COLLATE utf8mb4_general_ci NOT NULL,
-  `ked` varchar(2) COLLATE utf8mb4_general_ci NOT NULL,
-  `maca_rigida` varchar(2) COLLATE utf8mb4_general_ci NOT NULL,
-  `t.t.f` varchar(2) COLLATE utf8mb4_general_ci NOT NULL,
-  `tirante_aranha` varchar(2) COLLATE utf8mb4_general_ci NOT NULL,
-  `tirante_cabeca` varchar(2) COLLATE utf8mb4_general_ci NOT NULL,
-  `canula` varchar(2) COLLATE utf8mb4_general_ci NOT NULL,
-  `outro` varchar(50) COLLATE utf8mb4_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `materiais_utilizados_descartavel`
---
-
-CREATE TABLE `materiais_utilizados_descartavel` (
-  `ataduras` varchar(2) COLLATE utf8mb4_general_ci NOT NULL,
-  `cateter_tp.oculos` varchar(2) COLLATE utf8mb4_general_ci NOT NULL,
-  `compressa_comum` varchar(2) COLLATE utf8mb4_general_ci NOT NULL,
-  `kits` varchar(2) COLLATE utf8mb4_general_ci NOT NULL,
-  `luvas_desc` varchar(2) COLLATE utf8mb4_general_ci NOT NULL,
-  `mascara_desc` varchar(2) COLLATE utf8mb4_general_ci NOT NULL,
-  `manta_aluminizada` varchar(2) COLLATE utf8mb4_general_ci NOT NULL,
-  `pas_do_dea` varchar(2) COLLATE utf8mb4_general_ci NOT NULL,
-  `sonda_aspiracao` varchar(2) COLLATE utf8mb4_general_ci NOT NULL,
-  `soro_fisiologico` varchar(2) COLLATE utf8mb4_general_ci NOT NULL,
-  `talas_pap.` varchar(2) COLLATE utf8mb4_general_ci NOT NULL,
-  `outro` varchar(50) COLLATE utf8mb4_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `problemas_encontrados`
+-- Estrutura para tabela `problemas_encontrados`
 --
 
 CREATE TABLE `problemas_encontrados` (
-  `id_problemas_encontrados` int NOT NULL,
+  `id_paciente` int(11) NOT NULL,
   `psiquiatrico` tinyint(1) NOT NULL,
-  `respiratório_DPOC` tinyint(1) NOT NULL,
-  `respiratório_inalacao_fumaca` tinyint(1) NOT NULL,
-  `diabetes_hiperglicemia` tinyint(1) NOT NULL,
-  `diabetes_hipoglicemia` tinyint(1) NOT NULL,
-  `obstetrico_parto_emergencia` tinyint(1) NOT NULL,
-  `obstetrico_gestante` tinyint(1) NOT NULL,
-  `obstetrico_hemorragia_excessiva` tinyint(1) NOT NULL,
+  `DPOC` tinyint(1) NOT NULL,
+  `inalacao_fumaca` tinyint(1) NOT NULL,
+  `hiperglicemia` tinyint(1) NOT NULL,
+  `hipoglicemia` tinyint(1) NOT NULL,
+  `parto_emergencia` tinyint(1) NOT NULL,
+  `gestante` tinyint(1) NOT NULL,
+  `hemorragia_excessiva` tinyint(1) NOT NULL,
   `outro` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `procedimentos_efetuados`
+-- Estrutura para tabela `procedimentos_efetuados`
 --
 
 CREATE TABLE `procedimentos_efetuados` (
+  `id_paciente` int(11) NOT NULL,
   `aspiracao` tinyint(1) NOT NULL,
   `avaliacao_inicial` tinyint(1) NOT NULL,
   `avaliacao_dirigida` tinyint(1) NOT NULL,
@@ -289,7 +165,7 @@ CREATE TABLE `procedimentos_efetuados` (
   `tratado_choque` tinyint(1) NOT NULL,
   `uso_canula` tinyint(1) NOT NULL,
   `uso_colar` tinyint(1) NOT NULL,
-  `uso_colar_tamanho` int NOT NULL,
+  `uso_colar_tamanho` int(11) NOT NULL,
   `uso_ked` tinyint(1) NOT NULL,
   `uso_ttf` tinyint(1) NOT NULL,
   `ventilacao_suporte` tinyint(1) NOT NULL,
@@ -307,16 +183,17 @@ CREATE TABLE `procedimentos_efetuados` (
   `samu_usa` tinyint(1) NOT NULL,
   `samu_usb` tinyint(1) NOT NULL,
   `cit` tinyint(1) NOT NULL,
-  `outro` varchar(50) COLLATE utf8mb4_general_ci NOT NULL
+  `outro` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `sinais_sintomas`
+-- Estrutura para tabela `sinais_sintomas`
 --
 
 CREATE TABLE `sinais_sintomas` (
+  `id_paciente` int(11) NOT NULL,
   `abdomem_sensível_rígido` tinyint(1) NOT NULL,
   `afundamento_cranio` tinyint(1) NOT NULL,
   `agitacao` tinyint(1) NOT NULL,
@@ -374,11 +251,11 @@ CREATE TABLE `sinais_sintomas` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tipo_ocorrencia`
+-- Estrutura para tabela `tipo_ocorrencia`
 --
 
 CREATE TABLE `tipo_ocorrencia` (
-  `id_paciente` int NOT NULL,
+  `id_paciente` int(11) NOT NULL,
   `causado_por_animais` tinyint(1) NOT NULL,
   `com_meio_transporte` tinyint(1) NOT NULL,
   `desmoronamento_deslizamento` tinyint(1) NOT NULL,
@@ -399,11 +276,11 @@ CREATE TABLE `tipo_ocorrencia` (
   `queda_maior_2m` tinyint(1) NOT NULL,
   `trabalho` tinyint(1) NOT NULL,
   `transferencia` tinyint(1) NOT NULL,
-  `outro` varchar(10) COLLATE utf8mb4_general_ci NOT NULL
+  `outro` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `tipo_ocorrencia`
+-- Despejando dados para a tabela `tipo_ocorrencia`
 --
 
 INSERT INTO `tipo_ocorrencia` (`id_paciente`, `causado_por_animais`, `com_meio_transporte`, `desmoronamento_deslizamento`, `emergencia_medica`, `queda_altura_2m`, `tentativa_suicidio`, `queda_propria_altura`, `afogamento`, `agressao`, `atropelamento`, `choque_eletrico`, `desabamento`, `domestico`, `esportivo`, `intoxicacao`, `queda_bicicleta`, `queda_moto`, `queda_maior_2m`, `trabalho`, `transferencia`, `outro`) VALUES
@@ -412,10 +289,11 @@ INSERT INTO `tipo_ocorrencia` (`id_paciente`, `causado_por_animais`, `com_meio_t
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `transporte`
+-- Estrutura para tabela `transporte`
 --
 
 CREATE TABLE `transporte` (
+  `id_paciente` int(11) NOT NULL,
   `aereo` tinyint(1) NOT NULL,
   `clinico` tinyint(1) NOT NULL,
   `emergencial` tinyint(1) NOT NULL,
@@ -428,25 +306,25 @@ CREATE TABLE `transporte` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuario`
+-- Estrutura para tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `nome_usuario` varchar(20) DEFAULT NULL,
   `senha` varchar(15) DEFAULT NULL,
   `cpf` varchar(11) DEFAULT NULL,
   `nome_completo` varchar(30) DEFAULT NULL,
   `funcao` varchar(19) DEFAULT NULL,
-  `registro_abvesc` int DEFAULT NULL,
-  `n_unidade` int DEFAULT NULL,
+  `registro_abvesc` int(11) DEFAULT NULL,
+  `n_unidade` int(11) DEFAULT NULL,
   `unidade` varchar(20) DEFAULT NULL,
   `data_nasc` varchar(10) DEFAULT NULL,
   `validade` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `usuario`
+-- Despejando dados para a tabela `usuario`
 --
 
 INSERT INTO `usuario` (`id`, `nome_usuario`, `senha`, `cpf`, `nome_completo`, `funcao`, `registro_abvesc`, `n_unidade`, `unidade`, `data_nasc`, `validade`) VALUES
@@ -457,10 +335,11 @@ INSERT INTO `usuario` (`id`, `nome_usuario`, `senha`, `cpf`, `nome_completo`, `f
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `vitima_era`
+-- Estrutura para tabela `vitima_era`
 --
 
 CREATE TABLE `vitima_era` (
+  `id_paciente` int(11) NOT NULL,
   `ciclista` tinyint(1) NOT NULL,
   `condutor_moto` tinyint(1) NOT NULL,
   `gestante` tinyint(1) NOT NULL,
@@ -478,60 +357,144 @@ CREATE TABLE `vitima_era` (
 --
 
 --
--- Índices para tabela `dados_pessoais`
+-- Índices de tabela `dados_pessoais`
 --
 ALTER TABLE `dados_pessoais`
   ADD PRIMARY KEY (`id_paciente`);
 
 --
--- Índices para tabela `informacao_ocorrencia`
+-- Índices de tabela `decisao_transporte`
+--
+ALTER TABLE `decisao_transporte`
+  ADD PRIMARY KEY (`id_paciente`);
+
+--
+-- Índices de tabela `forma_conducao`
+--
+ALTER TABLE `forma_conducao`
+  ADD PRIMARY KEY (`id_paciente`);
+
+--
+-- Índices de tabela `informacao_ocorrencia`
 --
 ALTER TABLE `informacao_ocorrencia`
   ADD PRIMARY KEY (`id_paciente`);
 
 --
--- Índices para tabela `tipo_ocorrencia`
+-- Índices de tabela `problemas_encontrados`
+--
+ALTER TABLE `problemas_encontrados`
+  ADD PRIMARY KEY (`id_paciente`);
+
+--
+-- Índices de tabela `procedimentos_efetuados`
+--
+ALTER TABLE `procedimentos_efetuados`
+  ADD PRIMARY KEY (`id_paciente`);
+
+--
+-- Índices de tabela `sinais_sintomas`
+--
+ALTER TABLE `sinais_sintomas`
+  ADD PRIMARY KEY (`id_paciente`);
+
+--
+-- Índices de tabela `tipo_ocorrencia`
 --
 ALTER TABLE `tipo_ocorrencia`
   ADD PRIMARY KEY (`id_paciente`);
 
 --
--- Índices para tabela `usuario`
+-- Índices de tabela `transporte`
+--
+ALTER TABLE `transporte`
+  ADD PRIMARY KEY (`id_paciente`);
+
+--
+-- Índices de tabela `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- Índices de tabela `vitima_era`
+--
+ALTER TABLE `vitima_era`
+  ADD PRIMARY KEY (`id_paciente`);
+
+--
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
 -- AUTO_INCREMENT de tabela `dados_pessoais`
 --
 ALTER TABLE `dados_pessoais`
-  MODIFY `id_paciente` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Restrições para despejos de tabelas
+-- Restrições para tabelas despejadas
 --
 
 --
--- Limitadores para a tabela `informacao_ocorrencia`
+-- Restrições para tabelas `decisao_transporte`
+--
+ALTER TABLE `decisao_transporte`
+  ADD CONSTRAINT `decisao_transporte_ibfk_1` FOREIGN KEY (`id_paciente`) REFERENCES `dados_pessoais` (`id_paciente`);
+
+--
+-- Restrições para tabelas `forma_conducao`
+--
+ALTER TABLE `forma_conducao`
+  ADD CONSTRAINT `forma_conducao_ibfk_1` FOREIGN KEY (`id_paciente`) REFERENCES `dados_pessoais` (`id_paciente`);
+
+--
+-- Restrições para tabelas `informacao_ocorrencia`
 --
 ALTER TABLE `informacao_ocorrencia`
-  ADD CONSTRAINT `informacao_ocorrencia_ibfk_1` FOREIGN KEY (`id_paciente`) REFERENCES `dados_pessoais` (`id_paciente`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `informacao_ocorrencia_ibfk_1` FOREIGN KEY (`id_paciente`) REFERENCES `dados_pessoais` (`id_paciente`);
 
 --
--- Limitadores para a tabela `tipo_ocorrencia`
+-- Restrições para tabelas `problemas_encontrados`
+--
+ALTER TABLE `problemas_encontrados`
+  ADD CONSTRAINT `problemas_encontrados_ibfk_1` FOREIGN KEY (`id_paciente`) REFERENCES `dados_pessoais` (`id_paciente`);
+
+--
+-- Restrições para tabelas `procedimentos_efetuados`
+--
+ALTER TABLE `procedimentos_efetuados`
+  ADD CONSTRAINT `procedimentos_efetuados_ibfk_1` FOREIGN KEY (`id_paciente`) REFERENCES `dados_pessoais` (`id_paciente`);
+
+--
+-- Restrições para tabelas `sinais_sintomas`
+--
+ALTER TABLE `sinais_sintomas`
+  ADD CONSTRAINT `sinais_sintomas_ibfk_1` FOREIGN KEY (`id_paciente`) REFERENCES `dados_pessoais` (`id_paciente`);
+
+--
+-- Restrições para tabelas `tipo_ocorrencia`
 --
 ALTER TABLE `tipo_ocorrencia`
-  ADD CONSTRAINT `tipo_ocorrencia_ibfk_1` FOREIGN KEY (`id_paciente`) REFERENCES `dados_pessoais` (`id_paciente`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `tipo_ocorrencia_ibfk_1` FOREIGN KEY (`id_paciente`) REFERENCES `dados_pessoais` (`id_paciente`);
+
+--
+-- Restrições para tabelas `transporte`
+--
+ALTER TABLE `transporte`
+  ADD CONSTRAINT `transporte_ibfk_1` FOREIGN KEY (`id_paciente`) REFERENCES `dados_pessoais` (`id_paciente`);
+
+--
+-- Restrições para tabelas `vitima_era`
+--
+ALTER TABLE `vitima_era`
+  ADD CONSTRAINT `vitima_era_ibfk_1` FOREIGN KEY (`id_paciente`) REFERENCES `dados_pessoais` (`id_paciente`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
