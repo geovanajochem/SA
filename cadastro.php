@@ -16,7 +16,7 @@ $cpf =$_POST['cpf'];
 $data_nasc =$_POST['data_nasc'];
 
 // Insere os dados na tabela de usuários
-$sql = "INSERT INTO usuario (id_usuario, nome_usuario, funcao, senha, unidade, registro_abvesc, validade, cpf, data_nasc) 
+$sql = "INSERT INTO usuario (id, nome_usuario, funcao, senha, unidade, registro_abvesc, validade, cpf, data_nasc) 
 VALUES (NULL, '$nome_usuario', '$funcao', '$senha', '$unidade', '$registro_abvesc', '$validade', '$cpf', '$data_nasc')";
 
 if ($conn->query($sql) === TRUE) {
@@ -29,3 +29,4 @@ if ($conn->query($sql) === TRUE) {
 // Fecha a conexão com o banco de dados
 //$conn->close();
 ?>
+
