@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07/12/2023 às 00:14
+-- Tempo de geração: 07/12/2023 às 03:31
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.0.28
 
@@ -145,8 +145,8 @@ CREATE TABLE `procedimentos_efetuados` (
   `avaliacao_continuada` tinyint(1) NOT NULL,
   `chave_rautek` tinyint(1) NOT NULL,
   `canula_guedel` tinyint(1) NOT NULL,
-  `desobstrucao_v.a.` tinyint(1) NOT NULL,
-  `emprego_d.e.a.` tinyint(1) NOT NULL,
+  `desobstrucao_v_a` tinyint(1) NOT NULL,
+  `emprego_d_e_a` tinyint(1) NOT NULL,
   `gerenciamento_riscos` tinyint(1) NOT NULL,
   `limpeza_ferimento` tinyint(1) NOT NULL,
   `curativos` tinyint(1) NOT NULL,
@@ -157,43 +157,36 @@ CREATE TABLE `procedimentos_efetuados` (
   `simples` tinyint(1) NOT NULL,
   `3_pontas` tinyint(1) NOT NULL,
   `imobilizacoes` tinyint(1) NOT NULL,
-  `membro_inf.dir.` tinyint(1) NOT NULL,
-  `membro_inf.esq` tinyint(1) NOT NULL,
-  `membro_sup.dir` tinyint(1) NOT NULL,
-  `membro_sup.esq` tinyint(1) NOT NULL,
+  `membro_INF_DIR` tinyint(1) NOT NULL,
+  `membro_INF_ESQ` tinyint(1) NOT NULL,
+  `membro_SUP_DIR` tinyint(1) NOT NULL,
+  `membro_SUP_ESQ` tinyint(1) NOT NULL,
   `quadril` tinyint(1) NOT NULL,
   `cervical` tinyint(1) NOT NULL,
   `maca_sobre_rodas` tinyint(1) NOT NULL,
   `maca_rigida` tinyint(1) NOT NULL,
   `ponte` tinyint(1) NOT NULL,
   `retirado_capacete` tinyint(1) NOT NULL,
-  `r.c.p.` tinyint(1) NOT NULL,
+  `R_C_P` tinyint(1) NOT NULL,
   `rolamento_90°` tinyint(1) NOT NULL,
   `rolamento_180°` tinyint(1) NOT NULL,
   `tomada_decisao` tinyint(1) NOT NULL,
   `tratado_choque` tinyint(1) NOT NULL,
   `uso_canula` tinyint(1) NOT NULL,
   `uso_colar` tinyint(1) NOT NULL,
-  `uso_colar_tamanho` int(11) NOT NULL,
   `uso_ked` tinyint(1) NOT NULL,
   `uso_ttf` tinyint(1) NOT NULL,
   `ventilacao_suporte` tinyint(1) NOT NULL,
   `oxigenioterapia` tinyint(1) NOT NULL,
-  `reanimador` tinyint(1) NOT NULL,
-  `meios_auxiliares` tinyint(1) NOT NULL,
-  `celesc` tinyint(1) NOT NULL,
-  `def.civil` tinyint(1) NOT NULL,
-  `igp/pc` tinyint(1) NOT NULL,
-  `policia_civil` tinyint(1) NOT NULL,
-  `policia_militar` tinyint(1) NOT NULL,
-  `policia_pre` tinyint(1) NOT NULL,
-  `policia_prf` tinyint(1) NOT NULL,
-  `samu` tinyint(1) NOT NULL,
-  `samu_usa` tinyint(1) NOT NULL,
-  `samu_usb` tinyint(1) NOT NULL,
-  `cit` tinyint(1) NOT NULL,
-  `outro` varchar(50) NOT NULL
+  `reanimador` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `procedimentos_efetuados`
+--
+
+INSERT INTO `procedimentos_efetuados` (`id_paciente`, `aspiracao`, `avaliacao_inicial`, `avaliacao_dirigida`, `avaliacao_continuada`, `chave_rautek`, `canula_guedel`, `desobstrucao_v_a`, `emprego_d_e_a`, `gerenciamento_riscos`, `limpeza_ferimento`, `curativos`, `compressivo`, `encravamento`, `ocular`, `queimadura`, `simples`, `3_pontas`, `imobilizacoes`, `membro_INF_DIR`, `membro_INF_ESQ`, `membro_SUP_DIR`, `membro_SUP_ESQ`, `quadril`, `cervical`, `maca_sobre_rodas`, `maca_rigida`, `ponte`, `retirado_capacete`, `R_C_P`, `rolamento_90°`, `rolamento_180°`, `tomada_decisao`, `tratado_choque`, `uso_canula`, `uso_colar`, `uso_ked`, `uso_ttf`, `ventilacao_suporte`, `oxigenioterapia`, `reanimador`) VALUES
+(7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -257,6 +250,13 @@ CREATE TABLE `sinais_sintomas` (
   `outro` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `sinais_sintomas`
+--
+
+INSERT INTO `sinais_sintomas` (`id_paciente`, `abdomem_sensivel_rigido`, `afundamento_cranio`, `agitacao`, `amnesia`, `angina_peito`, `apineia`, `bradicardia`, `bradipneia`, `bronco_aspirando`, `cefaleia`, `cianose_labios`, `cianose_extremidades`, `convulsao`, `decorticacao`, `deformidade`, `descerebracao`, `desmaio`, `desvio_traqueia`, `despneia`, `dor_local`, `edema_localizado`, `edema_generalizado`, `enfisema_subcutaneo`, `face_palida`, `hemorragia_interna`, `hemorragia_externa`, `hipertensao`, `hipotencao`, `nausea_vomitos`, `nasoragia`, `obito`, `otorreia`, `otorragia`, `o_v_a_c_e`, `parada_cardiaca`, `parada_respiratoria`, `priapismo`, `prurido_pele`, `pupilas_anisocoria`, `pupilas_isocoria`, `pupilas_midriase`, `pupilas_miose`, `pupilas_reagente`, `pupilas_nao_reagente`, `sede`, `sinal_battle`, `sinal_guaxinim`, `sudorese`, `taquipneia`, `taquicardia`, `tontura`, `outro`) VALUES
+(7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -293,7 +293,8 @@ CREATE TABLE `tipo_ocorrencia` (
 --
 
 INSERT INTO `tipo_ocorrencia` (`id_paciente`, `causado_por_animais`, `com_meio_transporte`, `desmoronamento_deslizamento`, `emergencia_medica`, `queda_altura_2m`, `tentativa_suicidio`, `queda_propria_altura`, `afogamento`, `agressao`, `atropelamento`, `choque_eletrico`, `desabamento`, `domestico`, `esportivo`, `intoxicacao`, `queda_bicicleta`, `queda_moto`, `queda_maior_2m`, `trabalho`, `transferencia`, `outro`) VALUES
-(6, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '');
+(6, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
+(7, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -309,8 +310,22 @@ CREATE TABLE `transporte` (
   `pos_trauma` tinyint(1) NOT NULL,
   `samu` tinyint(1) NOT NULL,
   `outro` tinyint(1) NOT NULL,
-  `sem_remocao` tinyint(1) NOT NULL
+  `sem_remocao` tinyint(1) NOT NULL,
+  `forma_conducao_deitada` tinyint(1) NOT NULL,
+  `forma_conducao_sentada` tinyint(1) NOT NULL,
+  `forma_conducao_semi_sentada` tinyint(1) NOT NULL,
+  `decisao_transporte_critico` tinyint(1) NOT NULL,
+  `decisao_transporte_instavel` tinyint(1) NOT NULL,
+  `decisao_transporte_potencialmente_intavel` tinyint(1) NOT NULL,
+  `decisao_transporte_estavel` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `transporte`
+--
+
+INSERT INTO `transporte` (`id_paciente`, `aereo`, `clinico`, `emergencial`, `pos_trauma`, `samu`, `outro`, `sem_remocao`, `forma_conducao_deitada`, `forma_conducao_sentada`, `forma_conducao_semi_sentada`, `decisao_transporte_critico`, `decisao_transporte_instavel`, `decisao_transporte_potencialmente_intavel`, `decisao_transporte_estavel`) VALUES
+(7, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -360,6 +375,13 @@ CREATE TABLE `vitima_era` (
   `passageiro_moto` tinyint(1) NOT NULL,
   `pedestre` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `vitima_era`
+--
+
+INSERT INTO `vitima_era` (`id_paciente`, `ciclista`, `condutor_moto`, `gestante`, `passageiro_banco_frente`, `passageiro_banco_tras`, `condutor_carro`, `clinico`, `trauma`, `passageiro_moto`, `pedestre`) VALUES
+(7, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 --
 -- Índices para tabelas despejadas
